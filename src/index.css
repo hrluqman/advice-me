@@ -1,13 +1,147 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Tangerine&display=swap');
+
+:root {
+  --primary: #4B92AF;
+  --secondary: #064863;
+  --tertiary: #5af1b5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Tangerine', cursive, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.quote-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary);
+}
+
+.quote-container h1 {
+  position: absolute;
+  top: 2rem;
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.quote-container, .quote-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud {
+  width: 8rem;
+  margin: 1rem;
+  position: absolute;
+}
+
+.cloud:nth-of-type(1) {
+  top: 60%;
+  animation: cloudy-left 20s ease-out infinite;
+}
+
+.cloud:nth-of-type(2) {
+  top: 20%;
+  animation: cloudy-right 20s ease-out infinite;
+}
+
+.quote-content {
+  width: 40%;
+  padding: 50px;
+  padding-bottom: 5rem;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  background-color: var(--secondary);
+}
+
+.quote-content, .quote-content svg {
+  -webkit-box-shadow: 0px 8px 12px -1px rgba(0,0,0,0.45);
+  -moz-box-shadow: 0px 8px 12px -1px rgba(0,0,0,0.45);
+  box-shadow: 0px 8px 12px -1px rgba(0,0,0,0.45);
+}
+
+.quote-content h2 {
+  margin: 0;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 145%;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.quote-content p {
+  color: var(--tertiary);
+  margin: 0;
+  margin-top: 22px;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Tangerine', cursive, sans-serif;
+}
+
+.quote-content svg {
+  position: absolute;
+  cursor: pointer;
+  bottom: -1.5rem;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  border-radius: 5rem;
+  color: var(--secondary);
+  background-color: var(--tertiary);
+  transition: all 0.2s ease-out;
+}
+
+.quote-content svg:hover {
+  color: var(--tertiary);
+  background-color: var(--secondary);
+  box-shadow: 0px 0px 30px var(--tertiary);
+}
+
+.quote-content .exclaim {
+  position: absolute;
+  z-index: 9;
+  opacity: 0;
+  right: -3rem;
+  font-size: 8rem;
+  top: 0;
+  margin: 0;
+  transition: all 0.2s ease-out;
+  transform: translateX(5rem) translateY(5rem) rotate(60deg);
+}
+
+.quote-content:hover .exclaim {
+  animation: exclaim 0.2s ease-out forwards;
+  transform: unset;
+}
+
+.creator {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@keyframes exclaim {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes cloudy-left {
+  from { left: -40%;}
+  to {left: 100%;}
+}
+
+@keyframes cloudy-right {
+  from { right: -40%;}
+  to {right: 100%;}
 }
