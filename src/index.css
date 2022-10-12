@@ -17,6 +17,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: var(--primary);
+  position: relative;
   overflow: hidden;
 }
 
@@ -137,13 +138,13 @@ body {
 }
 
 @keyframes cloudy-left {
-  from { left: -40%;}
-  to {left: 100%;}
+  from {transform: translateX(-20rem);}
+  to {transform: translateX(20rem);}
 }
 
 @keyframes cloudy-right {
-  from { right: -40%;}
-  to {right: 100%;}
+  from {transform: translateX(20rem);}
+  to {transform: translateX(-20rem);}
 }
 
 @media screen and (max-width: 450px) {
@@ -151,9 +152,13 @@ body {
     font-size: 3rem;
   }
   .quote-content {
-    padding: 40px;
+    padding: 30px;
+    width: 50%;
   }
   .quote-content h2 {
     font-size: 1.2rem;
+  }
+  .quote-content .exclaim {
+    right: -1.8rem;
   }
 }
