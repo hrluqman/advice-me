@@ -11,13 +11,13 @@ body {
   font-family: 'Tangerine', cursive, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 .quote-container {
   width: 100vw;
   height: 100vh;
   background-color: var(--primary);
+  overflow: hidden;
 }
 
 .quote-container h1 {
@@ -144,4 +144,16 @@ body {
 @keyframes cloudy-right {
   from { right: -40%;}
   to {right: 100%;}
+}
+
+@media screen and (max-width: 450px) {
+  .quote-container h1 {
+    font-size: 3rem;
+  }
+  .quote-content {
+    padding: 40px;
+  }
+  .quote-content h2 {
+    font-size: 1.2rem;
+  }
 }
